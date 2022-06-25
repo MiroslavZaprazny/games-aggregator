@@ -6,6 +6,7 @@
         <title>Video game aggregator</title>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <livewire:styles />
     </head>
     <body class="bg-gray-900 text-white">
         <header class="border-b border-gray-800">
@@ -46,4 +47,5 @@
             </div>
         </footer>
     </body>
+    <livewire:scripts />
 </html>
