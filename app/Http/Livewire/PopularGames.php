@@ -14,7 +14,7 @@ class PopularGames extends Component
     {     
         $this->popularGames = Cache::remember('popular-games', 7, function() {
             return Http::withHeaders(config('services.igdb'))
-            ->withBody("fields name, rating, cover.url, platforms.abbreviation;
+            ->withBody("fields name, slug, rating, cover.url, platforms.abbreviation;
             where rating != null;
             where rating != 100;
             where total_rating_count > 200 ;

@@ -6,7 +6,7 @@
         @forelse ($popularGames as $game)
             <div class="game mb-10">
                 <div class="relative inline-block mb-3">
-                    <a href="">
+                    <a href="/games/{{$game['slug']}}">
                         <img src="{{ Str::replaceFirst('thumb', 'cover_big', $game['cover']['url']) }}" alt="game cover"
                             class="hover:opacity-75 transition ease-in-out duration-200">
                     </a>
@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="title">
-                    <a href="#" class="font-semibold leading-tight hover:text-gray-400">{{ $game['name'] }}</a>
+                    <a href="/games/{{$game['slug']}}" class="font-semibold leading-tight hover:text-gray-400">{{ $game['name'] }}</a>
                 </div>
                 <div class="text-gray-400">
                     @foreach ($game['platforms'] as $platform)

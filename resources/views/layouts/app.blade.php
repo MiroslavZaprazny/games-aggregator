@@ -12,7 +12,7 @@
         <header class="border-b border-gray-800">
             <nav class="container flex lg:flex-row flex-col items-center justify-between mx-auto px-4 py-6">
                 <div class="flex items-center mb-5 lg:mb-0">
-                    <a href="/">Logo</a>
+                    <a href="/">Games aggregator</a>
                     <ul class="flex ml-16 space-x-8">
                         <li><a href="#" class="hover:text-gray-400">Games</a></li>
                         <li><a href="#" class="hover:text-gray-400">Reviews</a></li>
