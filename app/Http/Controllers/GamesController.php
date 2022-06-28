@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -58,8 +59,26 @@ class GamesController extends Controller
         abort_if(!$game, 404);
         
         return view('show',[
-            'game' => $game[0]
+            'game' => $this->formatData($game[0])
         ]);
+    }
+
+    public function formatData($game)
+    {
+        return collect($game)->merge([
+            'social' => [
+                'website' => collect($game['websites'])->first(),
+                'facebook' => collect($game['websites'])->filter(function ($website){
+                    return Str::contains($website['url'], 'facebook'); 
+                })->first(),
+                'twitter' => collect($game['websites'])->filter(function ($website){
+                    return Str::contains($website['url'], 'twitter'); 
+                })->first(),
+                'instagram' => collect($game['websites'])->filter(function ($website){
+                    return Str::contains($website['url'], 'instagram'); 
+                })->first()
+            ]
+        ])->toArray();
     }
 
     /**
