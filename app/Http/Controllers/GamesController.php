@@ -77,7 +77,8 @@ class GamesController extends Controller
                 'instagram' => collect($game['websites'])->filter(function ($website){
                     return Str::contains($website['url'], 'instagram'); 
                 })->first()
-            ]
+            ],
+            'trailer' => 'https://youtube.com/embed/' . $game['videos'][0]['video_id']
         ])->toArray();
     }
 
