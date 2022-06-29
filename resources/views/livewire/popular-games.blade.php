@@ -1,4 +1,4 @@
-<div wire:init="loadPopularGames" class="popular-games-container pt-12">
+<div wire:init="loadPopularGames" class="popular-games-container pt-12" id="popular-games">
     <h2 class="mb-12 font-semibold text-blue-500 uppercase tracking-wide">
         Popular games
     </h2>

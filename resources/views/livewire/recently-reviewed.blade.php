@@ -1,4 +1,4 @@
-<div wire:init="loadRecentlyReviewedGames" class="reviewed w-full lg:w-3/4 mr-0 lg:mr-32">
+<div wire:init="loadRecentlyReviewedGames" class="reviewed w-full lg:w-3/4 mr-0 lg:mr-32" id="recently-reviewed" >
     <h2 class="font-semibold text-blue-500 uppercase tracking-wide">
         Recently reviewed games
     </h2>
@@ -6,7 +6,7 @@
         @forelse ($recentlyReviewedGames as $game)
             <div class="game-card flex p-6 bg-gray-800 rounded-xl">
                 <div class="relative inline-block mb-3 flex-none">
-                    <a href="">
+                    <a href="/games/{{$game['slug']}}">
                         <img src="{{ Str::replaceFirst('thumb', 'cover_big', $game['cover']['url']) }}"
                             alt="game cover" class="w-64 hover:opacity-75 transition ease-in-out duration-200">
                     </a>
@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="ml-16 mt-5">
-                    <a href="#" class="font-semibold text-lg leading-tight hover:text-gray-400">
+                    <a href="/games/{{$game['slug']}}" class="font-semibold text-lg leading-tight hover:text-gray-400">
                         {{ $game['name'] }}
                     </a>
                     <div class="text-gray-400 text-sm mt-1">

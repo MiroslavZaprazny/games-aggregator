@@ -16,7 +16,7 @@ class RecentlyReviewed extends Component
         $current = Carbon::now()->timestamp;
 
         $this->recentlyReviewedGames = Http::withHeaders(config('services.igdb'))
-        ->withBody("fields name, summary, rating, cover.url, platforms.abbreviation, first_release_date;
+        ->withBody("fields name, summary, rating, cover.url, platforms.abbreviation, first_release_date, slug;
         where(first_release_date > {$before} & first_release_date < {$current});
         where rating != null;
         where rating != 100;

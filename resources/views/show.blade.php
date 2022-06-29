@@ -150,11 +150,17 @@
             <h2 class="mb-12 font-semibold text-blue-500 uppercase tracking-wide">
                 Images
             </h2>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pb-12">
-                @foreach ($game['screenshots'] as $screenshot )
-                    <img src="{{ Str::replaceFirst('thumb', 'screenshot_big', $screenshot['url']) }}" alt="fotec">
-                @endforeach
+            @if (isset($game['screenshots']))
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pb-12">
+                    @foreach ($game['screenshots'] as $screenshot )
+                        <img src="{{ Str::replaceFirst('thumb', 'screenshot_big', $screenshot['url']) }}" alt="fotec">
+                    @endforeach
+                </div>
+            @else
+            <div class="text-lg pb-5">
+                There are no images available for this game.
             </div>
+            @endif
         </div>
         <div class="similiar-games-container pt-12">
             <h2 class="mb-12 font-semibold text-blue-500 uppercase tracking-wide">
@@ -164,7 +170,7 @@
                 @foreach ($game['similar_games'] as $game )
                     <div class="game mb-10">
                         <div class="relative inline-block mb-3">
-                            <a href="">
+                            <a href="/games/{{$game['slug']}}">
                                   <img src="{{ Str::replaceFirst('thumb', 'cover_big', $game['cover']['url']) }}"
                                     class="hover:opacity-75 transition ease-in-out duration-200">
                             </a>

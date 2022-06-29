@@ -11,7 +11,7 @@
                         class="w-20 hover:opacity-75 transition ease-in-out duration-200"> @endif
                 </a>
                 <div class="ml-2">
-                    <a href="#" class="font-semibold leading-tight hover:text-gray-400">{{ $company['name'] }}</a>
+                    <a href="@foreach ($company['websites'] as $website) {{ $website['url'] }}" @endforeach class="font-semibold leading-tight hover:text-gray-400">{{ $company['name'] }}</a>
                     <div class="text-gray-400 text-sm">
                         {{ gmdate('Y-m-d', $company['created_at']) }}
                     </div>
@@ -24,7 +24,7 @@
             <div class="w-20 h-20 bg-gray-700">
             </div>
             <div class="ml-2">
-                <div href="#" class="leading-tight text-transparent bg-gray-700 rounded">Name...</div>
+                <div class="leading-tight text-transparent bg-gray-700 rounded">Name...</div>
             </div>
         </div>   
     @endforeach

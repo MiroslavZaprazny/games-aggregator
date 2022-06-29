@@ -7,6 +7,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <livewire:styles />
+        <style>
+            html{
+                scroll-behavior: smooth;
+            }
+        </style>
     </head>
     <body class="bg-gray-900 text-white">
         <header class="border-b border-gray-800">
@@ -14,9 +19,8 @@
                 <div class="flex items-center mb-5 lg:mb-0">
                     <a href="/">Games aggregator</a>
                     <ul class="flex ml-16 space-x-8">
-                        <li><a href="#" class="hover:text-gray-400">Games</a></li>
-                        <li><a href="#" class="hover:text-gray-400">Reviews</a></li>
-                        <li><a href="#" class="hover:text-gray-400">Coming soon</a></li>
+                        <li><a href="#popular-games" class="hover:text-gray-400">Games</a></li>
+                        <li><a href="#recently-reviewed" class="hover:text-gray-400">Reviews</a></li>
                     </ul>
                 </div>
                 <div class="flex items-center">
